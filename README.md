@@ -3,7 +3,7 @@ Most plumbing in place for building a stand-alone microservice. Included are Doc
 
 # Usage
 ```
-mvn archetype:generate -DarchetypeCatalog=http://mvnrepo.cantara.no/content/repositories/snapshots
+mvn archetype:generate -DarchetypeCatalog=http://mvnrepo.cantara.no/content/repositories/releases
 ```
 
 * Select dropwizard-microservice-archetype
