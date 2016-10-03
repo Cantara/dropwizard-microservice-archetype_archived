@@ -18,7 +18,7 @@
     <scm>
         <developerConnection>TODO Your Github URL</developerConnection>
         <connection>TODO Your Github URL</connection>
-        <url>TODO https://github.com/Cantara/dropwizard-hello-world-application</url>
+        <url>TODO https://github.com/Cantara/dropwizard-microservices-archetype</url>
   </scm>
 
     <properties>
@@ -331,7 +331,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${package}.HelloWorldApplication</mainClass>
+                                    <mainClass>${package}.${applicationName}Application</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>META-INF/spring.handlers</resource>

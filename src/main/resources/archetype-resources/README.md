@@ -1,3 +1,24 @@
-# dropwizard-hello-world-application
-A runnable hello-world devops-ready java application built on DropWizard, Spring IoC, and more
+# ${applicationName}
+A runnable microservice devops-ready java application built on DropWizard, Spring IoC, and more
+
+## Build
+```
+mvn install
+```
+
+## Run
+```
+java -jar target/${artifactId}-${version}.jar
+```
+
+## Validate
+
+```
+https://localhost:8080/${applicationName}
+```
+
+*Healthcheck*
+```
+http://localhost:8081/${applicationName}/healthcheck
+```
 

@@ -7,9 +7,9 @@ RUN yum -y install curl
 # Install Application
 RUN adduser ${applicationName}
 ADD target/${applicationName}-application-*.jar /home/${applicationName}/${applicationName}-application.jar"
-ADD docker/hello-world.yml /home/${applicationName}/${applicationName}.yml
+ADD docker/${applicationName}.yml /home/${applicationName}/${applicationName}.yml
 RUN chown ${applicationName}:${applicationName} /home/${applicationName}/${applicationName}.yml
-ADD docker/hello-world_override.properties /home/${applicationName}/${applicationName}-override.properties
+ADD docker/${applicationName}_override.properties /home/${applicationName}/${applicationName}-override.properties
 RUN chown ${applicationName}:${applicationName} /home/${applicationName}/${applicationName}.properties
 
 EXPOSE 21500:21599

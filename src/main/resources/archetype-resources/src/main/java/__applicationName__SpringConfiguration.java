@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 @Configuration
-@ComponentScan(basePackageClasses = HelloWorldSpringConfiguration.class)
+@ComponentScan(basePackageClasses = ${applicationName}SpringConfiguration.class)
 @ImportResource("classpath:constretto/spring-constretto.xml")
-public class HelloWorldSpringConfiguration {
+public class ${applicationName}SpringConfiguration {
 }

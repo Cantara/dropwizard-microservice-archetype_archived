@@ -20,13 +20,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.ext.Provider;
 import java.util.Map;
 
-public class ${applicationName}Application extends Application<HelloWorldDropwizardConfiguration> {
+public class ${applicationName}Application extends Application<${applicationName}DropwizardConfiguration> {
 
     public static void main(String[] args) throws Exception {
         if (args.length == 0) {
             args = new String[] {"server", "${applicationName}.yml"};
         }
-        new HelloWorldApplication().run(args);
+        new ${applicationName}Application().run(args);
     }
 
     @Override
@@ -35,19 +35,19 @@ public class ${applicationName}Application extends Application<HelloWorldDropwiz
     }
 
     @Override
-    public void initialize(Bootstrap<HelloWorldDropwizardConfiguration> bootstrap) {
+    public void initialize(Bootstrap<${applicationName}DropwizardConfiguration> bootstrap) {
         bootstrap.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
         bootstrap.addBundle(new Java8Bundle());
-        bootstrap.addBundle(new SwaggerBundle<HelloWorldDropwizardConfiguration>() {
+        bootstrap.addBundle(new SwaggerBundle<${applicationName}DropwizardConfiguration>() {
             @Override
-            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(HelloWorldDropwizardConfiguration configuration) {
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(${applicationName}DropwizardConfiguration configuration) {
                 return configuration.swaggerBundleConfiguration;
             }
         });
     }
 
     @Override
-    public void run(HelloWorldDropwizardConfiguration configuration,
+    public void run(${applicationName}DropwizardConfiguration configuration,
                     Environment environment) {
         AnnotationConfigWebApplicationContext parent = createSpringParentContext(configuration);
         AnnotationConfigWebApplicationContext ctx = createSpringContext(parent);
@@ -59,7 +59,7 @@ public class ${applicationName}Application extends Application<HelloWorldDropwiz
         addProviders(environment, ctx);
     }
 
-    private AnnotationConfigWebApplicationContext createSpringParentContext(HelloWorldDropwizardConfiguration configuration) {
+    private AnnotationConfigWebApplicationContext createSpringParentContext(${applicationName}DropwizardConfiguration configuration) {
         AnnotationConfigWebApplicationContext parent = new AnnotationConfigWebApplicationContext();
         parent.refresh();
         parent.getBeanFactory().registerSingleton("configuration", configuration);
@@ -71,7 +71,7 @@ public class ${applicationName}Application extends Application<HelloWorldDropwiz
     private AnnotationConfigWebApplicationContext createSpringContext(AnnotationConfigWebApplicationContext parent) {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.setParent(parent);
-        ctx.register(HelloWorldSpringConfiguration.class);
+        ctx.register(${applicationName}SpringConfiguration.class);
         ctx.refresh();
         ctx.registerShutdownHook();
         ctx.start();

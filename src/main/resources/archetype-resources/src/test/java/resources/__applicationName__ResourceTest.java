@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.resources;
+package ${package}.hello;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,7 @@ import io.dropwizard.jackson.Jackson;
 import io.dropwizard.java8.jersey.OptionalMessageBodyWriter;
 import io.dropwizard.java8.jersey.OptionalParamFeature;
 import io.dropwizard.testing.junit.ResourceTestRule;
-import no.cantara.dwsample.api.Saying;
+import ${package}.hello.api.Saying;
 import ${package}.domain.counter.CounterService;
 import org.hibernate.validator.HibernateValidator;
 import org.junit.After;
@@ -28,7 +28,7 @@ import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class HelloWorldResourceTest {
+public class ${applicationName}ResourceTest {
 
     private static final CounterService counterService = mock(CounterService.class);
 
@@ -48,7 +48,7 @@ public class HelloWorldResourceTest {
             .setValidator(VALIDATOR)
             .addProvider(OptionalMessageBodyWriter.class)
             .addProvider(OptionalParamFeature.class)
-            .addResource(new HelloWorldResource("Hello, %s!", "Mr. Smith", counterService))
+            .addResource(new ${applicationName}Resource("Hello, %s!", "Mr. Smith", counterService))
             .build();
 
     @Before
@@ -63,7 +63,7 @@ public class HelloWorldResourceTest {
 
     @Test
     public void testGetPerson() {
-        assertThat(resources.client().target(no.cantara.dwsample.api.HelloWorldResource.PATH).request().get(Saying.class))
+        assertThat(resources.client().target(${package}.hello.${applicationName}Resource.PATH).request().get(Saying.class))
                 .isEqualTo(new Saying(3, "Hello, Mr. Smith!"));
         verify(counterService).next();
     }
