@@ -4,7 +4,7 @@
 
   <groupId>no.cantara</groupId>
   <artifactId>dropwizard-microservice-archetype</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.2-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>dropwizard-microservice-archetype</name>
@@ -32,6 +32,7 @@
     <connection>scm:git:git@github.com:Cantara/dropwizard-microservice-archetype.git</connection>
     <developerConnection>scm:git:git@github.com:Cantara/dropwizard-microservice-archetype.git</developerConnection>
     <url>https://github.com/Cantara/dropwizard-microservice-archetype</url>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
