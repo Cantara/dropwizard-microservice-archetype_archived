@@ -3,4 +3,4 @@
 #
 # Template command to start the application
 #
-java -jar target/${applicationName}-${version}.jar
+java -jar target/${artifactId}-${version}.jar

@@ -22,14 +22,14 @@ public class ${applicationName}FullStackIntegrationTest {
 
     @ClassRule
     public static final DropwizardAppRule<${applicationName}DropwizardConfiguration> RULE =
-            new DropwizardAppRule<>(${applicationName}Application.class, ResourceHelpers.resourceFilePath("hello-world-test.yml"));
+            new DropwizardAppRule<>(${applicationName}Application.class, ResourceHelpers.resourceFilePath("${applicationName}-test.yml"));
 
     @Test
     public void get${applicationName}() {
         Client client = JerseyClientBuilder.createClient();
 
         Response response = client.target(
-                String.format("http://localhost:%d" + ${applicationName}Resource.PATH, RULE.getLocalPort()))
+                String.format("http://localhost:%d/${applicationName}" + ${applicationName}Resource.PATH, RULE.getLocalPort()))
                 .request()
                 .get();
 
@@ -41,7 +41,7 @@ public class ${applicationName}FullStackIntegrationTest {
         Client client = JerseyClientBuilder.createClient();
 
         Response response = client.target(
-                String.format("http://localhost:%d" + ${applicationName}Resource.PATH, RULE.getLocalPort()))
+                String.format("http://localhost:%d/${applicationName}" + ${applicationName}Resource.PATH, RULE.getLocalPort()))
                 .request()
                 .post(Entity.json(new Planet("Neptune", "Bad Santa")));
 

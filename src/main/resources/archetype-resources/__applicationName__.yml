@@ -14,7 +14,7 @@ logging:
   level: INFO
 
   loggers:
-    ${package}: DEBUG
+    ${package}: TRACE
     ${package}.hello.${applicationName}Resource: TRACE
 
 # Logback's Time Based Rolling Policy - archivedLogFilenamePattern: /tmp/application-%d{yyyy-MM-dd}.log.gz

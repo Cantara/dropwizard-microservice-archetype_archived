@@ -9,6 +9,10 @@ mvn install
 ## Run
 ```
 java -jar target/${artifactId}-${version}.jar
+or 
+./run.sh 
+or 
+run.bat
 ```
 
 ## Validate

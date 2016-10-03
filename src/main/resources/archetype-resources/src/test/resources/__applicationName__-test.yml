@@ -1,4 +1,5 @@
 server:
+  rootPath: /${applicationName}
   applicationConnectors:
     - type: http
       port: 0
@@ -9,9 +10,9 @@ server:
 logging:
   level: INFO
   loggers:
-    no.cantara.dwsample: INFO
+    ${package}: TRACE
   appenders:
     - type: console
 
 swagger:
-  resourcePackage: no.cantara.dwsample
+  resourcePackage: ${package}
