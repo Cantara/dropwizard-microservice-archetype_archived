@@ -6,7 +6,6 @@ package ${package};
 import com.codahale.metrics.health.HealthCheck;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.dropwizard.Application;
-import io.dropwizard.java8.Java8Bundle;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.lifecycle.Managed;
 import io.dropwizard.servlets.tasks.Task;
@@ -39,7 +38,6 @@ public class ${applicationName}Application extends Application<${applicationName
     public void initialize(Bootstrap<${applicationName}DropwizardConfiguration> bootstrap) {
         bootstrap.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
         bootstrap.addBundle(new AssetsBundle("/assets/index.html","/","index.html"));
-        bootstrap.addBundle(new Java8Bundle());
         bootstrap.addBundle(new SwaggerBundle<${applicationName}DropwizardConfiguration>() {
             @Override
             protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(${applicationName}DropwizardConfiguration configuration) {

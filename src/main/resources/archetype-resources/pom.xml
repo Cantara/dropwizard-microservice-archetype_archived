@@ -27,7 +27,6 @@
         <logstash-logback-encoder.version>4.7</logstash-logback-encoder.version>
         <dropwizard-logging-logstash.version>1.1-Alpha-1</dropwizard-logging-logstash.version>
         <dropwizard.version>1.0.2</dropwizard.version>
-        <dropwizard.java8.version>0.9.0-1</dropwizard.java8.version>
         <dropwizard.metrics.version>3.1.2</dropwizard.metrics.version>
         <dropwizard-swagger.version>1.0.0-1</dropwizard-swagger.version>
         <swagger-annotations.version>1.5.4</swagger-annotations.version>
@@ -85,11 +84,6 @@
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.dropwizard.modules</groupId>
-            <artifactId>dropwizard-java8</artifactId>
-            <version>${dropwizard.java8.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard</groupId>

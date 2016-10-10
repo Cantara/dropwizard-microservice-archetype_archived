@@ -8,8 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.dropwizard.jackson.Jackson;
-import io.dropwizard.java8.jersey.OptionalMessageBodyWriter;
-import io.dropwizard.java8.jersey.OptionalParamFeature;
 import io.dropwizard.testing.junit.ResourceTestRule;
 import ${package}.hello.api.Saying;
 import ${package}.domain.counter.CounterService;
@@ -19,8 +17,8 @@ import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
+//import javax.validation.Validation;
+//import javax.validation.Validator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -37,15 +35,15 @@ public class ${applicationName}ResourceTest {
             .registerModules(new Jdk8Module())
             .registerModules(new JavaTimeModule());
 
-    private static final Validator VALIDATOR = Validation.byProvider(HibernateValidator.class).configure().addValidatedValueHandler(
-            new io.dropwizard.java8.validation.valuehandling.OptionalValidatedValueUnwrapper())
-            .addValidatedValueHandler(new io.dropwizard.java8.validation.valuehandling.OptionalValidatedValueUnwrapper()).buildValidatorFactory()
-            .getValidator();
+//    private static final Validator VALIDATOR = Validation.byProvider(HibernateValidator.class).configure().addValidatedValueHandler(
+//            new io.dropwizard.java8.validation.valuehandling.OptionalValidatedValueUnwrapper())
+//            .addValidatedValueHandler(new io.dropwizard.java8.validation.valuehandling.OptionalValidatedValueUnwrapper()).buildValidatorFactory()
+//            .getValidator();
 
     @ClassRule
     public static final ResourceTestRule resources = ResourceTestRule.builder()
             .setMapper(MAPPER)
-            .setValidator(VALIDATOR)
+//            .setValidator(VALIDATOR)
             .addProvider(OptionalMessageBodyWriter.class)
             .addProvider(OptionalParamFeature.class)
             .addResource(new ${applicationName}Resource("Hello, %s!", "Mr. Smith", counterService))
