@@ -34,7 +34,6 @@ logging:
       timeZone: Europe/Oslo
       maxFileSize: 10MB
 
-#    TODO dependent on bug https://github.com/Cantara/dropwizard-microservice-archetype/issues/4
     - type: logstashfile
       threshold: TRACE
       customFields: '{"appname":"${applicationName}","funfacts":["hello-is-a-word","world-is-a-planet"],"buildinfo":{"version":"Version 1.1-SNAPSHOT","author":"Mr. developer","license":"Apache License Version 2.0"}}'
