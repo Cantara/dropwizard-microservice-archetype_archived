@@ -1,12 +1,12 @@
 FROM azul/zulu-openjdk-centos:8
-MAINTAINER Kim Christian Gaarder <kim.christian.gaarder@gmail.com>
+MAINTAINER Bard Lind <bard.lind@gmail.com>
 RUN yum -y install yum-cron
 RUN yum -y update
 RUN yum -y install curl
 
 # Install Application
 RUN adduser ${applicationName}
-ADD target/${applicationName}-application-*.jar /home/${applicationName}/${applicationName}-application.jar"
+ADD target/${applicationName}*.jar /home/${applicationName}/${applicationName}.jar"
 ADD docker/${applicationName}.yml /home/${applicationName}/${applicationName}.yml
 RUN chown ${applicationName}:${applicationName} /home/${applicationName}/${applicationName}.yml
 ADD docker/${applicationName}_override.properties /home/${applicationName}/${applicationName}-override.properties
@@ -26,5 +26,5 @@ CMD [ \
     "-Dcom.sun.management.jmxremote.authenticate=false", \
     "-Djava.rmi.server.hostname=localhost", \
     "-jar", \
-    "${applicationName}-application.jar" \
+    "${applicationName}.jar" \
 ]

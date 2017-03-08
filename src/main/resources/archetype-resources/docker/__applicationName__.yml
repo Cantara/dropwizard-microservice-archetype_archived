@@ -1,6 +1,6 @@
 
 server:
-  rootPath: ${applicationName}
+  rootPath: /${applicationName}
   applicationConnectors:
     - type: http
       port: 21580
