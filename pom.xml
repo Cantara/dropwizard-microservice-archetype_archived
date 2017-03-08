@@ -4,7 +4,7 @@
 
   <groupId>no.cantara</groupId>
   <artifactId>dropwizard-microservice-archetype</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.4-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>dropwizard-microservice-archetype</name>
