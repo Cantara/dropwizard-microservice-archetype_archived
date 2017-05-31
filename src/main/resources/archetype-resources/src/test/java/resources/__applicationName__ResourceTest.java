@@ -11,6 +11,8 @@ import io.dropwizard.jackson.Jackson;
 import io.dropwizard.testing.junit.ResourceTestRule;
 import ${package}.hello.api.Saying;
 import ${package}.domain.counter.CounterService;
+import io.dropwizard.jersey.optional.OptionalMessageBodyWriter;
+import io.dropwizard.jersey.optional.OptionalParamFeature;
 import org.hibernate.validator.HibernateValidator;
 import org.junit.After;
 import org.junit.Before;
