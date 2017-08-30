@@ -8,3 +8,15 @@ mvn archetype:generate -DarchetypeCatalog=http://mvnrepo.cantara.no/content/repo
 
 * Select dropwizard-microservice-archetype
 * Provide applcationName in _CamelCase_
+
+
+# Development
+
+``` 
+mvn install archetype:update-local-catalog
+```
+cd to new directory
+```
+mvn -U archetyarchetypeCatalog=local
+
+```
